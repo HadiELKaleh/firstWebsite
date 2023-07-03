@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Josefin+Slab|Lobster');
+
+* {
+    margin: 0;
+    padding: 0;
+
+}
+:root {
+    --text: #fbd96a;
+    --background: #291105;
+    --primary-button: #6199ff;
+    --secondary-button: #e19b05;
+    --accent: #94e2f0;
+    --text2: #284041;
+}
+
+body {
+
+    background-color: var(--background);
+    color: #ffeac3;
+
+
+}
+p{
+    color: var(--text);
+}
+
+/*.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center safe;
+    align-items: center safe;
+
+
+}*/
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: inherit;
+    }
+
+}
+
+
+#taskbar_div {
+
+    height: 10%;
+    width: 100%;
+    border: black;
+    background-color: #1f0e05;
+    opacity: 85%;
+    position: fixed;
+    animation: fadeIn 0.3s;
+
+
+}
+
+#taskbar_table {
+    height: 100%;
+    width: 100%;
+}
+
+.taskbar_items {
+    padding-top: 1%;
+    text-align: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+
+}
+
+.sunContainer {
+    animation: fadeIn 7s;
+    transform: scale(0.2) translate(-200%, -150%);
+    -webkit-box-reflect: below 0 linear-gradient(transparent, #0002);
+}
+
+#sun {
+
+    transition: filter 2s;
+}
+
+#rays {
+
+    transition: transform 1.5s;
+}
+
+.sunContainer :hover #rays {
+    transform: scale(1.2) translate(-8%, -8%);
+}
+
+.sunContainer :hover #sun {
+    filter: drop-shadow(0 0 30px yellow)
+}
+
+#note1 {
+    position: absolute;
+    height: 10%;
+    width: 10%;
+    background-color: var(--accent);
+    margin-top: 20%;
+    margin-left: 20%;
+}
+
+
+
+.frame {
+
+    position: absolute;
+
+    top: 25%;
+    right: 1%;
+    width: 400px;
+    height: 400px;
+    margin-top: -7%;
+    margin-left: -10%;
+    border-radius: 8px;
+    box-shadow: 0 , 0 , 0 rgba(0, 0, 0, 0.6);
+
+    color: var(--text2);
+    font-family: 'Josefin slab', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+}
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.center {
+    height: 74%;
+    width: 80%;
+    background: var(--accent);
+    border-radius: 15%;
+    box-shadow: 0,0,0, rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+#wave{
+    animation: fadeIn 5s;
+}
+
+.profile {
+    float: left;
+    width: 200px;
+    height: 320px;
+    text-align: center;
+}
+.profile .image {
+    animation: fadeIn 1s;
+    position: relative;
+    width: 80px;
+    height: 70px;
+    margin: 38px auto 0 auto;
+}
+.profile .image .circle-1, .profile .image .circle-2 {
+    position: absolute;
+    box-sizing: border-box;
+    width: 76px;
+    height: 76px;
+    top: -3px;
+    left: -3px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--primary-button) var(--primary-button) var(--primary-button) transparent;
+    border-radius: 50%;
+    transition: all 1.5s ease-in-out;
+}
+
+.circle-1 {
+    animation: circle-1 2s;
+}
+@keyframes circle-1 {
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+.profile .image .circle-2 {
+    width: 82px;
+    height: 82px;
+    top: -6px;
+    left: -6px;
+    border-color: var(--secondary-button) transparent var(--secondary-button) var(--secondary-button);
+    animation: circle 2s;
+}
+@keyframes circle {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.profile .image img {
+    display: block;
+    border-radius: 50%;
+
+}
+.profile .image:hover {
+    cursor: pointer;
+}
+.profile .image:hover .circle-1, .profile .image:hover .circle-2 {
+    transform: rotate(360deg);
+}
+.profile .image:hover .circle-2 {
+    transform: rotate(-360deg);
+}
+
+@keyframes textIn {
+    from{
+        opacity: 0;
+        transform: translateX(-20%);
+
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+
+    }
+
+}
+
+.profile .name {
+
+    animation: textIn 1s ease;
+
+    font-size: 1.8rem;
+    margin-top: 15px;
+    line-height: 30px;
+    letter-spacing: 3px;
+}
+.profile .job {
+
+    animation-delay: 2s;
+    animation: textIn 4s ease;
+
+    font-size: 1.1rem;
+    line-height: 15px;
+}
+
+@keyframes textUp {
+    from{
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to{
+        opacity: inherit;
+        transform: translateY(0);
+    }
+}
+
+.profile .actions .btn {
+
+
+
+    width: 80px;
+    height: 30px;
+    margin: 0 auto 10px auto;
+    background: none;
+    border: 2px solid transparent;
+    font-size: 1.1rem;
+    box-sizing: border-box;
+    color: #7c3e04;
+}
+.btn{
+    animation: textUp 1s;
+}
+.btn, .parameter, .link{
+    font-family: 'Josefin sans';
+    color: #7c3e04;
+    text-decoration: none;
+}
+.profile .actions .btn:hover {
+    cursor: pointer;
+}
+
+.hvr-underline-from-center {
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    overflow: hidden;
+}
+.hvr-underline-from-center:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 51%;
+    right: 51%;
+    bottom: 0;
+    background: var(--text2);
+    height: 1px;
+    transition-property: left, right;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+.hvr-underline-from-center:hover:before, .hvr-underline-from-center:focus:before, .hvr-underline-from-center:active:before {
+    left: 0;
+    right: 0;
+}
+
+.stats .box {
+    box-sizing: border-box;
+    width: 120px;
+    height: 99px;
+    background: rgba(0, 0, 0, 0.05);
+    text-align: center;
+    padding-top: 28px;
+    transition: all .4s ease-in-out;
+    color: #643a7a;
+}
+.box1 {
+    animation: bg .5s ease-in-out;
+}
+.box2 {
+    animation: bg .8s ease-in-out;
+}
+.box3 {
+    animation: bg 1.1s ease-in-out;
+}
+
+@keyframes bg {
+    0% {
+        transform: translate(8rem);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+.stats .box:hover {
+    cursor: pointer;
+    color: #fff;
+}
+.hvr-underline-from-right {
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    overflow: hidden;
+}
+.hvr-underline-from-right:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 100%;
+    right: 0;
+    bottom: 0;
+    background: #644e72;
+    height: 99px;
+    transition-property: left;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+.hvr-underline-from-right:hover:before, .hvr-underline-from-right:focus:before, .hvr-underline-from-right:active:before {
+    left: 0;
+}
+.stats .box:nth-child(2) {
+    margin: 1px 0;
+}
+.stats span {
+    display: block;
+}
+.stats .value {
+    font-size: 1.8rem;
+    font-family: lobster;
+}
+.stats .parameter {
+    font-size: 1rem;
+    line-height: 1.2;
+}
